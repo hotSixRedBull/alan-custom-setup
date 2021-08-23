@@ -5,3 +5,7 @@ set smartcase
 set cursorline
 set number
 syntax enable
+
+nnoremap yy yy"+yy
+vnoremap y ygv"+y
+noremap gp "+p
