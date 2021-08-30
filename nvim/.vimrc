@@ -23,7 +23,7 @@ nnoremap J 5j
 nnoremap K 5k
 
 " color scheme
-colo evokai
+colo southernlights
 
 " Specify a directory for plugins
 " - For Neovim: stdpath('data') . '/plugged'
@@ -32,6 +32,11 @@ call plug#begin('~/.vim/plugged')
 
 " On-demand loading
 Plug 'scrooloose/nerdtree', { 'on': 'NERDTreeToggle' }
+Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+Plug 'junegunn/fzf.vim'
+Plug 'tpope/vim-surround'
+Plug 'frazrepo/vim-rainbow'
+Plug 'amadeus/vim-evokai'
 
 " Initialize plugin system
 " :source %
@@ -52,3 +57,8 @@ noremap <C-l> <C-w>l
 " nmap <F6> :NERDTreeToggle<CR>
 nnoremap <C-F> :NERDTreeFind<CR>
 nnoremap <Leader>n :NERDTreeToggle<CR>
+
+" fzf
+" for finding files with name, <Leader>f
+" for finding files with content, :Ag 
+nnoremap <Leader>f :Files<CR>
